@@ -8,13 +8,12 @@ export default function App() {
 
   return (
     <>
-      {selectedContactId ? (
-        <div>Selected Contact View</div>
+      {selectedContactId, setSelectedContactId (
+        <div><h1>Selected Contact View</h1></div>
       ) : (
         <ContactList />
       )}
     </>
   );
 }
-
 export default App
