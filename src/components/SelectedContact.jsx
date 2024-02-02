@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import ContactRow from "./ContactRow";
-import ContactList from "./ContactList";''
+import ContactList from "./ContactList";
 
-export default function{{ selectedContactId }} {
+export default function SelectedContact( selectedContactId ) {
 const contact = ({ selectedContactId, setSelectedContactId }) => {
   return <div onClick={() => setSelectedContactId(contactId)} className={contactId}></div>;
 };
@@ -28,9 +28,8 @@ useEffect (() => { // Calling a useEffect and passing a callback.
            <a href={`mail to:${contact.email}`}>Talk to me!</a>
            <button>Click here!</button>
            </div>
-        ) : (
+        ) : ( (null)
         )}
          <button onClick={GoBackToList}>Back to List</button>
         </section>
-    );
-export default App;
+    )};
