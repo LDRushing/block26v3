@@ -1,5 +1,6 @@
-export default function ContactRow({ setSelectedContactId, contact }) {
-    return (
+export default function ContactRow({ setSelectedContactId, contact, }) { //Contact row is being rendered by ContactList.
+  console.log(color); 
+  return (
       <tr
         onClick={() => {
           setSelectedContactId(contact.id);
@@ -11,3 +12,4 @@ export default function ContactRow({ setSelectedContactId, contact }) {
       </tr>
     );
   }
+  //
