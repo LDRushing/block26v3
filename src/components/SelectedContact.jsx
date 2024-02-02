@@ -3,11 +3,10 @@ import { useEffect } from "react";
 import ContactRow from "./ContactRow";
 import ContactList from "./ContactList";
 
-export default function SelectedContact( selectedContactId ) {
-const contact = ({ selectedContactId, setSelectedContactId }) => {
-  return <div onClick={() => setSelectedContactId(contactId)} className={contactId}></div>;
-};
+export default function SelectedContact({ selectedContactId, setSelectedContactId }) {
+    const [contact, setContact]=useState(null)
 useEffect (() => { // Calling a useEffect and passing a callback.
+    console.log(selectedContactId);
     async function getContact () {
         try {
         const response = await fetch(`https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`)
@@ -18,15 +17,15 @@ useEffect (() => { // Calling a useEffect and passing a callback.
         }
     }
         getContact();
+        console.log(contact); 
 }, []); 
-  
+  function GoBackToList (){setSelectedContactId(null)} 
     return (
         <section style={{ backgroundColor: "blue"}}> 
         {contact ? (
             <div>
            <h1>{contact.name}</h1>
-           <a href={`mail to:${contact.email}`}>Talk to me!</a>
-           <button>Click here!</button>
+          <button><a href={`mailto:${contact.email}`}>Talk to me!</a></button>
            </div>
         ) : ( (null)
         )}
